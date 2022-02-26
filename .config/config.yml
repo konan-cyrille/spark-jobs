@@ -1,0 +1,27 @@
+# Python CircleCI 2.1 configuration file
+
+version: 2.1
+jobs:
+  # Job to test convert_csv_file
+  build_test_stock_market:
+    docker:
+      - image: circleci/python:3.8.10
+
+    working_directory: ~/repo
+
+    steps:
+      # step1 : fetch repo from Github
+      - checkout
+      # step2 : Create virtual environnment and install dependencies
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements.txt
+      #step3: run tests
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            pytest -v --cov=convert_csv_files_to_parquet_file
