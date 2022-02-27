@@ -16,8 +16,6 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            echo "************** Java version"
-            java -version
             sudo apt-get install default-jre
             sudo apt-get install default-jdk
 
