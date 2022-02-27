@@ -21,7 +21,9 @@ jobs:
             echo '****2'
             sudo apt-get install -y default-jre default-jdk
             echo '****3'
-            sudo apt update && apt install -y curl
+            sudo apt-get update
+            echo '****3-bis'
+            sudo apt-get install -y curl
             echo '****4'
             curl -L -O https://dlcdn.apache.org/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
             echo '****5'
