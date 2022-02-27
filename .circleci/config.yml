@@ -23,7 +23,7 @@ jobs:
             echo '****3'
             sudo apt-get update
             echo '****3-bis'
-            sudo apt-get install -y curl
+            sudo apt-get install wget -y
             echo '****4'
             wget https://dlcdn.apache.org/spark/spark-3.2.0/spark-3.2.0-bin-hadoop3.2.tgz
             echo '****5'
