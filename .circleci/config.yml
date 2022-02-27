@@ -16,6 +16,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            echo "************** Java version"
+            java -version
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
