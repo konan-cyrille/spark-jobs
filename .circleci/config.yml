@@ -3,7 +3,7 @@
 version: 2.1
 jobs:
   # Job to test convert_csv_file
-  build_test_stock_market:
+  build_test:
     docker:
       - image: circleci/python:3.8.10
 
@@ -25,3 +25,8 @@ jobs:
           command: |
             . venv/bin/activate
             pytest -v --cov=convert_csv_files_to_parquet_file
+  
+  workflows:
+    build_and_test_before_push_to_git:
+      jobs:
+        -build_test
